@@ -1,0 +1,28 @@
+<md-toolbar>
+  <div class="md-toolbar-tools">
+    <md-button class="md-icon-button" ng-click="close()">
+      <md-icon>close</md-icon>
+    </md-button>
+
+
+    <md-icon>account_circle</md-icon>
+    <h1 class="md-toolbar-tools">Sidenav Right</h1>
+  </div>
+</md-toolbar>
+<md-content layout-padding>
+  <form>
+    <md-input-container>
+      <label for="user">Benutzername</label>
+      <input type="text" id="user"
+             ng-model="data" md-sidenav-focus>
+    </md-input-container>
+
+    <md-input-container>
+      <label for="password">Passwort</label>
+      <input type="password" id="password"
+             ng-model="data">
+    </md-input-container>
+
+    <md-button class="md-primary">Login</md-button>
+  </form>
+</md-content>

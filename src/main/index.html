@@ -1,0 +1,93 @@
+<!doctype html>
+<html ng-app="forza">
+<head >
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="web-app-status-bar" content="black" />
+
+  <title>forza</title>
+
+  <!-- webfontloader -->
+  <script>
+    WebFontConfig = {
+      google: {families: ['RobotoDraft:400italic,700italic,400,700:latin','Material+Icons']}
+    };
+    (function () {
+      var wf = document.createElement('script');
+      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })();
+  </script>
+  <!-- /webfontloader -->
+
+  <!-- build:css assets/styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css assets/styles/app.css -->
+  <link rel="stylesheet" href="assets/styles/main.css">
+  <!-- endbuild -->
+
+</head>
+
+<body layout="column">
+
+<md-toolbar layout="column" id="topnav" class="md-whiteframe-z4" md-theme-watch="true">
+  <div class="md-toolbar-tools">
+
+    <md-button class="md-icon-button"><md-icon>arrow_back</md-icon></md-button>
+    <h1 class="topnav-title"><span translate="global.title"></span></h1>
+    <span flex></span>
+
+    <md-button class="md-icon-button" ng-click="togglePush()"><md-icon>{{pushStatus()}}</md-icon></md-button>
+    <md-button class="md-icon-button" ng-click="toggleRight()"><md-icon>more_vert</md-icon></md-button>
+  </div>
+</md-toolbar>
+
+<md-sidenav md-component-id="right" class="md-sidenav-right" ui-view="navbar"></md-sidenav>
+
+<md-content id="main" layout="column" flex ui-view="content" ng-view></md-content>
+<!--./container -->
+
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-material/angular-material.js"></script>
+<script src="bower_components/angular-translate/angular-translate.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+<script src="bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
+<script src="bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js"></script>
+<script src="bower_components/angular-cache-buster/angular-cache-buster.js"></script>
+<script src="bower_components/ngCordova/dist/ng-cordova.min.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<script src="cordova.js"></script>
+
+<!-- build:js scripts/app.js -->
+<script src="scripts/app/app.js"></script>
+<script src="scripts/app/app.config.js"></script>
+<script src="scripts/aspects/i18n.js"></script>
+<script src="scripts/aspects/navigation.js"></script>
+<script src="scripts/app/main/main.js"></script>
+<script src="scripts/app/main/main.controller.js"></script>
+<!-- endbuild -->
+
+</body>
+</html>
